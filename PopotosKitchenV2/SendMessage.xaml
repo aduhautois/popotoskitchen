@@ -1,0 +1,28 @@
+﻿<Controls:MetroWindow x:Class="PopotosKitchenV2.SendMessage"
+        xmlns:Controls="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:PopotosKitchenV2"
+        mc:Ignorable="d"
+        WindowStartupLocation="CenterScreen"
+        Title="Message" Height="470.956" Width="479.485">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="Auto"/>
+        </Grid.ColumnDefinitions>
+        <Label Grid.Row="0" Grid.Column="0" x:Name="lblMessageSubject" Content="Subject:" Padding="20"/>
+        <TextBox Grid.Row="0" Grid.Column="1" x:Name="txtMessageSubject" Height="40" Width="300"/>
+        <Label Grid.Row="1" Grid.Column="0" x:Name="lblMessageText" Content="Message:" Padding="20"/>
+        <TextBox Grid.Row="1" Grid.Column="1" x:Name="txtMessageText" Height="300" Width="300" TextWrapping="Wrap" AcceptsReturn="True"/>
+        
+        <Button Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2" x:Name="btnSendMessage" Content="OK" Height="40" Width="141" HorizontalAlignment="Center" Margin="80 20 0 0" Click="btnSendMessage_Click"/>
+    </Grid>
+</Controls:MetroWindow>

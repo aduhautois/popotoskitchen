@@ -1,0 +1,56 @@
+﻿<Controls:MetroWindow x:Class="PopotosKitchenV2.EditOrder"
+        xmlns:Controls="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:PopotosKitchenV2"
+        ResizeMode="NoResize"
+        WindowStartupLocation="CenterScreen"
+        mc:Ignorable="d"
+        Title="Edit Order" Height="333.564" Width="661.569" BorderThickness="0" Loaded="MetroWindow_Loaded">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="Auto"/>
+        </Grid.ColumnDefinitions>
+        <TextBlock Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" FontSize="16" Foreground="#FF595959" Padding="10"><Run Text="Edit Order Information:"/></TextBlock>
+
+        <Label Grid.Row="1" Grid.Column="0" x:Name="lblEditOrder_OrderID" Content="Order ID:" Padding="20"/>
+        <TextBox Grid.Row="1" Grid.Column="1" x:Name="txtEditOrder_OrderID" Height="40" Width="200" IsReadOnly="True"/>
+        <Label Grid.Row="1" Grid.Column="2" x:Name="lblEditOrder_Completed" Content="Completed:" Padding="20"/>
+        <StackPanel Grid.Row="1" Grid.Column="3" x:Name="pnlEditOrder_Completed" Orientation="Horizontal">
+            <RadioButton x:Name="radCompleted_Yes" Content="Yes"/>
+            <RadioButton x:Name="radCompleted_No" Content="No" Margin="40 0 0 0"/>
+        </StackPanel>
+        
+        <Label Grid.Row="2" Grid.Column="0" x:Name="lblEditOrder_CustomerID" Content="Customer ID:" Padding="20"/>
+        <TextBox Grid.Row="2" Grid.Column="1" x:Name="txtEditOrder_CustomerID" Width="200" Height="40"/>
+       
+        <Label Grid.Row="3" Grid.Column="0" x:Name="lblEditOrder_Date" Content="Date:" Padding="20"/>
+        <DatePicker Grid.Row="3" Grid.Column="1" x:Name="dateEditOrder_Date" Width="200" Height="40"/>
+        <Label Grid.Row="2" Grid.Column="2" x:Name="lblEditOrder_Paid" Content="Paid:" Padding="20"/>
+        <StackPanel Grid.Row="2" Grid.Column="3" x:Name="pnlEditOrder_PaidRadButtons" Height="20" Width="200" Orientation="Horizontal">
+            <RadioButton x:Name="radEditOrder_PaidYes" Content="Yes"/>
+            <RadioButton x:Name="radEditOrder_PaidNo" Content="No" Margin="40 0 0 0"/>
+        </StackPanel>
+
+        <Label Grid.Row="3" Grid.Column="2" x:Name="lblEditOrder_Traded" Content="Traded:" Padding="20"/>
+        <StackPanel Grid.Row="3" Grid.Column="3" x:Name="pnlEditOrder_TradedRadButtons" Height="20" Width="200" Orientation="Horizontal">
+            <RadioButton x:Name="radEditOrder_TradedYes" Content="Yes" />
+            <RadioButton x:Name="radEditOrder_TradedNo" Content="No" Margin="40 0 0 0"/>
+        </StackPanel>
+
+        <Button Grid.Row="4" Grid.Column="1" x:Name="btnEditOrder_ConfirmChanges" Height="40" Content="Confirm changes" Margin="0 20 0 0" Click="btnEditOrder_ConfirmChanges_Click"/>
+        <Button Grid.Row="4" Grid.Column="3" x:Name="btnEditOrder_CancelChanges" Height="40" Content="Cancel" Margin="0 20 0 0" Click="btnEditOrder_CancelChanges_Click"/>
+    </Grid>
+</Controls:MetroWindow>

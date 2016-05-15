@@ -1,0 +1,116 @@
+C:\Users\Ashlyn\OneDrive\school\fall 15\.net II\PopotosKitchenV2\PopotosKitchenV2\bin\Debug\PopotosKitchenV2.exe.config
+C:\Users\Ashlyn\OneDrive\school\fall 15\.net II\PopotosKitchenV2\PopotosKitchenV2\bin\Debug\PopotosKitchenV2.exe
+C:\Users\Ashlyn\OneDrive\school\fall 15\.net II\PopotosKitchenV2\PopotosKitchenV2\bin\Debug\PopotosKitchenV2.pdb
+C:\Users\Ashlyn\OneDrive\school\fall 15\.net II\PopotosKitchenV2\PopotosKitchenV2\bin\Debug\BusinessLogic.dll
+C:\Users\Ashlyn\OneDrive\school\fall 15\.net II\PopotosKitchenV2\PopotosKitchenV2\bin\Debug\BusinessObjects.dll
+C:\Users\Ashlyn\OneDrive\school\fall 15\.net II\PopotosKitchenV2\PopotosKitchenV2\bin\Debug\MahApps.Metro.dll
+C:\Users\Ashlyn\OneDrive\school\fall 15\.net II\PopotosKitchenV2\PopotosKitchenV2\bin\Debug\System.Windows.Interactivity.dll
+C:\Users\Ashlyn\OneDrive\school\fall 15\.net II\PopotosKitchenV2\PopotosKitchenV2\bin\Debug\DataAccess.dll
+C:\Users\Ashlyn\OneDrive\school\fall 15\.net II\PopotosKitchenV2\PopotosKitchenV2\bin\Debug\BusinessLogic.pdb
+C:\Users\Ashlyn\OneDrive\school\fall 15\.net II\PopotosKitchenV2\PopotosKitchenV2\bin\Debug\BusinessObjects.pdb
+C:\Users\Ashlyn\OneDrive\school\fall 15\.net II\PopotosKitchenV2\PopotosKitchenV2\bin\Debug\MahApps.Metro.xml
+C:\Users\Ashlyn\OneDrive\school\fall 15\.net II\PopotosKitchenV2\PopotosKitchenV2\bin\Debug\DataAccess.pdb
+C:\Users\Ashlyn\OneDrive\school\fall 15\.net II\PopotosKitchenV2\PopotosKitchenV2\obj\Debug\PopotosKitchenV2.csprojResolveAssemblyReference.cache
+C:\Users\Ashlyn\OneDrive\school\fall 15\.net II\PopotosKitchenV2\PopotosKitchenV2\obj\Debug\EditCustomer.g.cs
+C:\Users\Ashlyn\OneDrive\school\fall 15\.net II\PopotosKitchenV2\PopotosKitchenV2\obj\Debug\EditOrder.g.cs
+C:\Users\Ashlyn\OneDrive\school\fall 15\.net II\PopotosKitchenV2\PopotosKitchenV2\obj\Debug\Login.g.cs
+C:\Users\Ashlyn\OneDrive\school\fall 15\.net II\PopotosKitchenV2\PopotosKitchenV2\obj\Debug\MainWindow.g.cs
+C:\Users\Ashlyn\OneDrive\school\fall 15\.net II\PopotosKitchenV2\PopotosKitchenV2\obj\Debug\App.g.cs
+C:\Users\Ashlyn\OneDrive\school\fall 15\.net II\PopotosKitchenV2\PopotosKitchenV2\obj\Debug\PopotosKitchenV2_MarkupCompile.cache
+C:\Users\Ashlyn\OneDrive\school\fall 15\.net II\PopotosKitchenV2\PopotosKitchenV2\obj\Debug\PopotosKitchenV2_MarkupCompile.lref
+C:\Users\Ashlyn\OneDrive\school\fall 15\.net II\PopotosKitchenV2\PopotosKitchenV2\obj\Debug\App.baml
+C:\Users\Ashlyn\OneDrive\school\fall 15\.net II\PopotosKitchenV2\PopotosKitchenV2\obj\Debug\EditCustomer.baml
+C:\Users\Ashlyn\OneDrive\school\fall 15\.net II\PopotosKitchenV2\PopotosKitchenV2\obj\Debug\EditOrder.baml
+C:\Users\Ashlyn\OneDrive\school\fall 15\.net II\PopotosKitchenV2\PopotosKitchenV2\obj\Debug\Login.baml
+C:\Users\Ashlyn\OneDrive\school\fall 15\.net II\PopotosKitchenV2\PopotosKitchenV2\obj\Debug\MainWindow.baml
+C:\Users\Ashlyn\OneDrive\school\fall 15\.net II\PopotosKitchenV2\PopotosKitchenV2\obj\Debug\PopotosKitchenV2.g.resources
+C:\Users\Ashlyn\OneDrive\school\fall 15\.net II\PopotosKitchenV2\PopotosKitchenV2\obj\Debug\PopotosKitchenV2.Properties.Resources.resources
+C:\Users\Ashlyn\OneDrive\school\fall 15\.net II\PopotosKitchenV2\PopotosKitchenV2\obj\Debug\PopotosKitchenV2.csproj.GenerateResource.Cache
+C:\Users\Ashlyn\OneDrive\school\fall 15\.net II\PopotosKitchenV2\PopotosKitchenV2\obj\Debug\PopotosKitchenV2.exe
+C:\Users\Ashlyn\OneDrive\school\fall 15\.net II\PopotosKitchenV2\PopotosKitchenV2\obj\Debug\PopotosKitchenV2.pdb
+C:\Users\Ashlyn\OneDrive\school\fall 15\.net II\PopotosKitchenV2\PopotosKitchenV2\obj\Debug\CustomerSearchMini.g.cs
+C:\Users\Ashlyn\OneDrive\school\fall 15\.net II\PopotosKitchenV2\PopotosKitchenV2\obj\Debug\CustomerSearchMini.baml
+C:\Users\Ashlyn\OneDrive\school\fall 15\.net II\PopotosKitchenV2\PopotosKitchenV2\obj\Debug\EditOrderLines.g.cs
+C:\Users\Ashlyn\OneDrive\school\fall 15\.net II\PopotosKitchenV2\PopotosKitchenV2\obj\Debug\EditOrderLines.baml
+C:\Users\Ashlyn\OneDrive\school\fall 15\.net II\PopotosKitchenV2\PopotosKitchenV2\obj\Debug\RecipeInformation.g.cs
+C:\Users\Ashlyn\OneDrive\school\fall 15\.net II\PopotosKitchenV2\PopotosKitchenV2\obj\Debug\RecipeInformation.baml
+C:\Users\Ashlyn\OneDrive\school\fall 15\.net II\PopotosKitchenV2\PopotosKitchenV2\bin\Debug\Microsoft.ReportViewer.WinForms.dll
+C:\Users\Ashlyn\OneDrive\school\fall 15\.net II\PopotosKitchenV2\PopotosKitchenV2\bin\Debug\Microsoft.SqlServer.Types.dll
+C:\Users\Ashlyn\OneDrive\school\fall 15\.net II\PopotosKitchenV2\PopotosKitchenV2\bin\Debug\de\Microsoft.SqlServer.Types.resources.dll
+C:\Users\Ashlyn\OneDrive\school\fall 15\.net II\PopotosKitchenV2\PopotosKitchenV2\bin\Debug\es\Microsoft.SqlServer.Types.resources.dll
+C:\Users\Ashlyn\OneDrive\school\fall 15\.net II\PopotosKitchenV2\PopotosKitchenV2\bin\Debug\fr\Microsoft.SqlServer.Types.resources.dll
+C:\Users\Ashlyn\OneDrive\school\fall 15\.net II\PopotosKitchenV2\PopotosKitchenV2\bin\Debug\it\Microsoft.SqlServer.Types.resources.dll
+C:\Users\Ashlyn\OneDrive\school\fall 15\.net II\PopotosKitchenV2\PopotosKitchenV2\bin\Debug\ja\Microsoft.SqlServer.Types.resources.dll
+C:\Users\Ashlyn\OneDrive\school\fall 15\.net II\PopotosKitchenV2\PopotosKitchenV2\bin\Debug\ko\Microsoft.SqlServer.Types.resources.dll
+C:\Users\Ashlyn\OneDrive\school\fall 15\.net II\PopotosKitchenV2\PopotosKitchenV2\bin\Debug\pt\Microsoft.SqlServer.Types.resources.dll
+C:\Users\Ashlyn\OneDrive\school\fall 15\.net II\PopotosKitchenV2\PopotosKitchenV2\bin\Debug\ru\Microsoft.SqlServer.Types.resources.dll
+C:\Users\Ashlyn\OneDrive\school\fall 15\.net II\PopotosKitchenV2\PopotosKitchenV2\bin\Debug\zh-Hans\Microsoft.SqlServer.Types.resources.dll
+C:\Users\Ashlyn\OneDrive\school\fall 15\.net II\PopotosKitchenV2\PopotosKitchenV2\bin\Debug\zh-Hant\Microsoft.SqlServer.Types.resources.dll
+C:\Users\Ashlyn\OneDrive\school\fall 15\.net II\PopotosKitchenV2\PopotosKitchenV2\obj\Debug\PopotosKitchenV2.frmCustomerListReport.resources
+C:\Users\Ashlyn\OneDrive\school\fall 15\.net II\PopotosKitchenV2\PopotosKitchenV2\obj\Debug\RdlCompile.cache
+C:\Users\Ashlyn\OneDrive\school\fall 15\.net II\PopotosKitchenV2\PopotosKitchenV2\obj\Debug\RdlCompile.compiled
+C:\Users\Ashlyn\OneDrive\school\fall 15\.net II\PopotosKitchenV2\PopotosKitchenV2\obj\Debug\PopotosKitchenV2.frmUncompletedOrdersListForm.resources
+C:\Users\Ashlyn\OneDrive\school\fall 15\.net II\PopotosKitchenV2\PopotosKitchenV2\obj\Debug\IngredientInformation.g.cs
+C:\Users\Ashlyn\OneDrive\school\fall 15\.net II\PopotosKitchenV2\PopotosKitchenV2\obj\Debug\IngredientInformation.baml
+C:\Users\Ashlyn\OneDrive\school\fall 15\.net II\PopotosKitchenV2\PopotosKitchenV2\obj\Debug\EditCook.g.cs
+C:\Users\Ashlyn\OneDrive\school\fall 15\.net II\PopotosKitchenV2\PopotosKitchenV2\obj\Debug\EditCook.baml
+C:\Users\Ashlyn\OneDrive\school\fall 15\.net II\PopotosKitchenV2\PopotosKitchenV2\obj\Debug\EditPermissions.g.cs
+C:\Users\Ashlyn\OneDrive\school\fall 15\.net II\PopotosKitchenV2\PopotosKitchenV2\obj\Debug\EditPermissions.baml
+C:\Users\Ashlyn\OneDrive\school\fall 15\.net II\PopotosKitchenV2\PopotosKitchenV2\obj\Debug\SendMessage.g.cs
+C:\Users\Ashlyn\OneDrive\school\fall 15\.net II\PopotosKitchenV2\PopotosKitchenV2\obj\Debug\SendMessage.baml
+C:\Users\Ashlyn\OneDrive\school\fall 15\.net II\PopotosKitchenV2\PopotosKitchenV2\obj\Debug\CookOrderLines.g.cs
+C:\Users\Ashlyn\OneDrive\school\fall 15\.net II\PopotosKitchenV2\PopotosKitchenV2\obj\Debug\CookOrderLines.baml
+C:\Users\Ashlyn\OneDrive\school\fall 15\.net II\PopotosKitchenV2\PopotosKitchenV2\obj\Debug\AssignOrder.g.cs
+C:\Users\Ashlyn\OneDrive\school\fall 15\.net II\PopotosKitchenV2\PopotosKitchenV2\obj\Debug\AssignOrder.baml
+C:\Users\Ashlyn\OneDrive\school\fall 15\.net II\PopotosKitchenV2 - School DB\PopotosKitchenV2\bin\Debug\PopotosKitchenV2.exe.config
+C:\Users\Ashlyn\OneDrive\school\fall 15\.net II\PopotosKitchenV2 - School DB\PopotosKitchenV2\obj\Debug\PopotosKitchenV2.exe
+C:\Users\Ashlyn\OneDrive\school\fall 15\.net II\PopotosKitchenV2 - School DB\PopotosKitchenV2\obj\Debug\PopotosKitchenV2.pdb
+C:\Users\Ashlyn\OneDrive\school\fall 15\.net II\PopotosKitchenV2 - School DB\PopotosKitchenV2\bin\Debug\PopotosKitchenV2.exe
+C:\Users\Ashlyn\OneDrive\school\fall 15\.net II\PopotosKitchenV2 - School DB\PopotosKitchenV2\bin\Debug\PopotosKitchenV2.pdb
+C:\Users\Ashlyn\OneDrive\school\fall 15\.net II\PopotosKitchenV2 - School DB\PopotosKitchenV2\bin\Debug\BusinessLogic.dll
+C:\Users\Ashlyn\OneDrive\school\fall 15\.net II\PopotosKitchenV2 - School DB\PopotosKitchenV2\bin\Debug\BusinessObjects.dll
+C:\Users\Ashlyn\OneDrive\school\fall 15\.net II\PopotosKitchenV2 - School DB\PopotosKitchenV2\bin\Debug\MahApps.Metro.dll
+C:\Users\Ashlyn\OneDrive\school\fall 15\.net II\PopotosKitchenV2 - School DB\PopotosKitchenV2\bin\Debug\System.Windows.Interactivity.dll
+C:\Users\Ashlyn\OneDrive\school\fall 15\.net II\PopotosKitchenV2 - School DB\PopotosKitchenV2\bin\Debug\DataAccess.dll
+C:\Users\Ashlyn\OneDrive\school\fall 15\.net II\PopotosKitchenV2 - School DB\PopotosKitchenV2\bin\Debug\BusinessLogic.pdb
+C:\Users\Ashlyn\OneDrive\school\fall 15\.net II\PopotosKitchenV2 - School DB\PopotosKitchenV2\bin\Debug\BusinessObjects.pdb
+C:\Users\Ashlyn\OneDrive\school\fall 15\.net II\PopotosKitchenV2 - School DB\PopotosKitchenV2\bin\Debug\MahApps.Metro.xml
+C:\Users\Ashlyn\OneDrive\school\fall 15\.net II\PopotosKitchenV2 - School DB\PopotosKitchenV2\bin\Debug\DataAccess.pdb
+C:\Users\Ashlyn\OneDrive\school\fall 15\.net II\PopotosKitchenV2 - School DB\PopotosKitchenV2\obj\Debug\PopotosKitchenV2.csprojResolveAssemblyReference.cache
+C:\Users\Ashlyn\OneDrive\school\fall 15\.net II\PopotosKitchenV2 - School DB\PopotosKitchenV2\obj\Debug\AssignOrder.g.cs
+C:\Users\Ashlyn\OneDrive\school\fall 15\.net II\PopotosKitchenV2 - School DB\PopotosKitchenV2\obj\Debug\CookOrderLines.g.cs
+C:\Users\Ashlyn\OneDrive\school\fall 15\.net II\PopotosKitchenV2 - School DB\PopotosKitchenV2\obj\Debug\CustomerSearchMini.g.cs
+C:\Users\Ashlyn\OneDrive\school\fall 15\.net II\PopotosKitchenV2 - School DB\PopotosKitchenV2\obj\Debug\EditCook.g.cs
+C:\Users\Ashlyn\OneDrive\school\fall 15\.net II\PopotosKitchenV2 - School DB\PopotosKitchenV2\obj\Debug\EditCustomer.g.cs
+C:\Users\Ashlyn\OneDrive\school\fall 15\.net II\PopotosKitchenV2 - School DB\PopotosKitchenV2\obj\Debug\EditOrder.g.cs
+C:\Users\Ashlyn\OneDrive\school\fall 15\.net II\PopotosKitchenV2 - School DB\PopotosKitchenV2\obj\Debug\EditOrderLines.g.cs
+C:\Users\Ashlyn\OneDrive\school\fall 15\.net II\PopotosKitchenV2 - School DB\PopotosKitchenV2\obj\Debug\EditPermissions.g.cs
+C:\Users\Ashlyn\OneDrive\school\fall 15\.net II\PopotosKitchenV2 - School DB\PopotosKitchenV2\obj\Debug\IngredientInformation.g.cs
+C:\Users\Ashlyn\OneDrive\school\fall 15\.net II\PopotosKitchenV2 - School DB\PopotosKitchenV2\obj\Debug\Login.g.cs
+C:\Users\Ashlyn\OneDrive\school\fall 15\.net II\PopotosKitchenV2 - School DB\PopotosKitchenV2\obj\Debug\MainWindow.g.cs
+C:\Users\Ashlyn\OneDrive\school\fall 15\.net II\PopotosKitchenV2 - School DB\PopotosKitchenV2\obj\Debug\SendMessage.g.cs
+C:\Users\Ashlyn\OneDrive\school\fall 15\.net II\PopotosKitchenV2 - School DB\PopotosKitchenV2\obj\Debug\RecipeInformation.g.cs
+C:\Users\Ashlyn\OneDrive\school\fall 15\.net II\PopotosKitchenV2 - School DB\PopotosKitchenV2\obj\Debug\App.g.cs
+C:\Users\Ashlyn\OneDrive\school\fall 15\.net II\PopotosKitchenV2 - School DB\PopotosKitchenV2\obj\Debug\PopotosKitchenV2_MarkupCompile.cache
+C:\Users\Ashlyn\OneDrive\school\fall 15\.net II\PopotosKitchenV2 - School DB\PopotosKitchenV2\obj\Debug\PopotosKitchenV2_MarkupCompile.lref
+C:\Users\Ashlyn\OneDrive\school\fall 15\.net II\PopotosKitchenV2 - School DB\PopotosKitchenV2\obj\Debug\App.baml
+C:\Users\Ashlyn\OneDrive\school\fall 15\.net II\PopotosKitchenV2 - School DB\PopotosKitchenV2\obj\Debug\AssignOrder.baml
+C:\Users\Ashlyn\OneDrive\school\fall 15\.net II\PopotosKitchenV2 - School DB\PopotosKitchenV2\obj\Debug\CookOrderLines.baml
+C:\Users\Ashlyn\OneDrive\school\fall 15\.net II\PopotosKitchenV2 - School DB\PopotosKitchenV2\obj\Debug\CustomerSearchMini.baml
+C:\Users\Ashlyn\OneDrive\school\fall 15\.net II\PopotosKitchenV2 - School DB\PopotosKitchenV2\obj\Debug\EditCook.baml
+C:\Users\Ashlyn\OneDrive\school\fall 15\.net II\PopotosKitchenV2 - School DB\PopotosKitchenV2\obj\Debug\EditCustomer.baml
+C:\Users\Ashlyn\OneDrive\school\fall 15\.net II\PopotosKitchenV2 - School DB\PopotosKitchenV2\obj\Debug\EditOrder.baml
+C:\Users\Ashlyn\OneDrive\school\fall 15\.net II\PopotosKitchenV2 - School DB\PopotosKitchenV2\obj\Debug\EditOrderLines.baml
+C:\Users\Ashlyn\OneDrive\school\fall 15\.net II\PopotosKitchenV2 - School DB\PopotosKitchenV2\obj\Debug\EditPermissions.baml
+C:\Users\Ashlyn\OneDrive\school\fall 15\.net II\PopotosKitchenV2 - School DB\PopotosKitchenV2\obj\Debug\IngredientInformation.baml
+C:\Users\Ashlyn\OneDrive\school\fall 15\.net II\PopotosKitchenV2 - School DB\PopotosKitchenV2\obj\Debug\Login.baml
+C:\Users\Ashlyn\OneDrive\school\fall 15\.net II\PopotosKitchenV2 - School DB\PopotosKitchenV2\obj\Debug\MainWindow.baml
+C:\Users\Ashlyn\OneDrive\school\fall 15\.net II\PopotosKitchenV2 - School DB\PopotosKitchenV2\obj\Debug\SendMessage.baml
+C:\Users\Ashlyn\OneDrive\school\fall 15\.net II\PopotosKitchenV2 - School DB\PopotosKitchenV2\obj\Debug\RecipeInformation.baml
+C:\Users\Ashlyn\OneDrive\school\fall 15\.net II\PopotosKitchenV2 - School DB\PopotosKitchenV2\obj\Debug\PopotosKitchenV2.g.resources
+C:\Users\Ashlyn\OneDrive\school\fall 15\.net II\PopotosKitchenV2 - School DB\PopotosKitchenV2\obj\Debug\PopotosKitchenV2.frmCustomerListReport.resources
+C:\Users\Ashlyn\OneDrive\school\fall 15\.net II\PopotosKitchenV2 - School DB\PopotosKitchenV2\obj\Debug\PopotosKitchenV2.frmUncompletedOrdersListForm.resources
+C:\Users\Ashlyn\OneDrive\school\fall 15\.net II\PopotosKitchenV2 - School DB\PopotosKitchenV2\obj\Debug\PopotosKitchenV2.Properties.Resources.resources
+C:\Users\Ashlyn\OneDrive\school\fall 15\.net II\PopotosKitchenV2 - School DB\PopotosKitchenV2\obj\Debug\PopotosKitchenV2.csproj.GenerateResource.Cache
+C:\Users\Ashlyn\OneDrive\school\fall 15\.net II\PopotosKitchenV2 - School DB\PopotosKitchenV2\obj\Debug\RdlCompile.cache
+C:\Users\Ashlyn\OneDrive\school\fall 15\.net II\PopotosKitchenV2 - School DB\PopotosKitchenV2\obj\Debug\RdlCompile.compiled

@@ -1,0 +1,56 @@
+﻿<Controls:MetroWindow x:Class="PopotosKitchenV2.IngredientInformation"
+        xmlns:Controls="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:PopotosKitchenV2"
+        mc:Ignorable="d"
+        WindowStartupLocation="CenterScreen"
+        Title="Ingredient Information" Height="427.119" Width="440.467" Loaded="MetroWindow_Loaded">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <Label x:Name="lblTitle" Grid.Row="0" FontSize="16" Foreground="#FF595959" Padding="10" Content="Ingredient Information" />
+        <Grid Grid.Row="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="Auto" />
+            </Grid.ColumnDefinitions>
+            <Label Grid.Column="0" Grid.Row="0" x:Name="lblIngredient_Location" Padding="20" Content="Location:"/>
+            <TextBox Grid.Column="1" Grid.Row="0" Grid.ColumnSpan="3" x:Name="txtIngredient_Location" Height="40" Width="315" IsReadOnly="True"/>
+
+            <Label Grid.Row="1" Grid.Column="0" x:Name="lblIngredient_LVL" Padding="20" Content="Level:"/>
+            <TextBox Grid.Row="1" Grid.Column="1" x:Name="txtIngredient_LVL" Height="40" Width="100" IsReadOnly="True"/>
+            <Label Grid.Row="1" Grid.Column="2" x:Name="lblIngredient_iLVL" Padding="20" Content="iLVL:"/>
+            <TextBox Grid.Row="1" Grid.Column="3" x:Name="txtIngredient_iLVL" Height="40" Width="100" />
+
+            <Label Grid.Row="2" Grid.Column="0" x:Name="lblIngredient_Node" Padding="20" Content="Node:"/>
+            <TextBox Grid.Row="2" Grid.Column="1" x:Name="txtIngredient_Node" Height="40" Width="100" IsReadOnly="True"/>
+            <Label Grid.Row="2" Grid.Column="2" x:Name="lblIngredient_Coordinates" Padding="20" Content="Coordinates:" />
+            <TextBox Grid.Row="2" Grid.Column="3" x:Name="txtIngredient_Coordinates" Height="40" Width="100" IsReadOnly="True"/>
+            
+            <Label Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="2" Content="Can also be obtained by.." Padding="20"/>
+            
+            <CheckBox Grid.Row="4" Grid.Column="1" x:Name="chkIngredients_Cooking" Content="Cooking" Margin="30 0 0 0" Padding="5"/>
+            <CheckBox Grid.Row="4" Grid.Column="2" x:Name="chkIngredients_Mob" Content="Mob Drop" Margin="30 0 0 0" Padding="5"/>
+            <CheckBox Grid.Row="5" Grid.Column="1" x:Name="chkIngredients_Fishing" Content="Fishing" Margin="30 0 0 0" Padding="5"/>
+            <CheckBox Grid.Row="5" Grid.Column="2" x:Name="chkIngredients_Vendor" Content="Vendor" Margin="30 0 0 0" Padding="5"/>
+            
+            <Button Grid.Row="6" Grid.Column="1" Grid.ColumnSpan="3" x:Name="btnIngredients_OK" Content="OK" Width="200" Margin="-60 20 0 0" Click="btnIngredients_OK_Click"/>
+        </Grid>
+    </Grid>
+</Controls:MetroWindow>

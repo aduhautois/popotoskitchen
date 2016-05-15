@@ -1,0 +1,52 @@
+﻿<Controls:MetroWindow x:Class="PopotosKitchenV2.CustomerSearchMini"
+        xmlns:Controls="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:PopotosKitchenV2"
+        mc:Ignorable="d"
+        ResizeMode="NoResize"
+        WindowStartupLocation="CenterScreen"
+        Title="Customer Search" Height="450" Width="810">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto" />
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="Auto" />
+            <ColumnDefinition Width="Auto" />
+            <ColumnDefinition Width="Auto" />
+        </Grid.ColumnDefinitions>
+        <Label Grid.Row="0" Grid.Column="0" Content=" " Padding="5" />
+        <Label Grid.Row="1" Grid.Column="0" x:Name="lblCustomerSearchWindow_SearchCriteria" Content="Search:" Padding="50 20 20 20"  />
+        <TextBox Grid.Row="1" x:Name="txtCustomerSearchWindow_SearchCriteria" Padding="0" Height="40" Width="310" Grid.ColumnSpan="2" Margin="189,9,5,10"/>
+        <Label Grid.Row="2" Grid.Column="0" x:Name="lblCustomerCustomerSearchWindow_SearchBy" Content="Search by:" Padding="50 20 0 0" />
+        <Grid Grid.Row="2" Grid.Column="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="Auto"/>
+            </Grid.ColumnDefinitions>
+            <ComboBox Name="cmbxCustomerSearchWindow_SearchBy" Grid.Column="0" Width="175" Height="40" >
+                <ComboBoxItem x:Name="cmbxitmCustomerSearchWindow_All" Content="All" Selector.IsSelected="True"/>
+                <ComboBoxItem x:Name="cmbxitmCustomerSearchWindow_CustomerID" Content="Customer ID"/>
+                <ComboBoxItem x:Name="cmbxitmCustomerSearchWindow_Name" Content="Name" />
+                <ComboBoxItem x:Name="cmbxitmCustomerSearchWindow_FreeCompany" Content="Free Company" />
+            </ComboBox>
+        </Grid>
+        <Button x:Name="btnCustmerSearchWindow_SearchCustomers" Grid.Row="1" Grid.Column="4" Height="40" Content="Search!" Width="200" Margin="50,0,50,0" Click="btnCustmerSearchWindow_SearchCustomers_Click"/>
+
+        <Button x:Name="btnCustomerSearchWindow_ViewAllCustomers" Grid.Row="2" Grid.Column="4" Height="40" Content="View All" Margin="50,8,50,0" Click="btnCustomerSearchWindow_ViewAllCustomers_Click"/>
+
+        <DataGrid Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="5" IsReadOnly="True"  Name="gridCustomerSearchWindow_CustomerSearchResults" Margin="50,30,50,30" Height="150" SelectionMode="Single" SelectionUnit="FullRow" BorderThickness="1" Background="#7FFFFFFF" SelectionChanged="gridCustomerSearchWindow_CustomerSearchResults_SelectionChanged" />
+
+        <Button Grid.Row="4" Grid.Column="0" x:Name="btnCustomerSearchWindow_SelectCustomer" Content="Select Customer" HorizontalAlignment="Left" Height="40" Margin="50,0,0,0" Width="141" Click="btnCustomerSearchWindow_SelectCustomer_Click"/>
+        <Button Grid.Row="4" Grid.Column="1" x:Name="btnCustomerSearchWindow_Cancel" Content="Cancel" HorizontalAlignment="Left" Margin="30,0,30,0" Height="40" Width="141" Click="btnCustomerSearchWindow_Cancel_Click"/>
+    </Grid>
+</Controls:MetroWindow>

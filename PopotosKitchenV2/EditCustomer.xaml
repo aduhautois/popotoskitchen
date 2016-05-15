@@ -1,0 +1,52 @@
+﻿<Controls:MetroWindow x:Class="PopotosKitchenV2.EditCustomer"
+        xmlns:Controls="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:PopotosKitchenV2"
+        ResizeMode="NoResize"
+        WindowStartupLocation="CenterScreen"
+        mc:Ignorable="d"
+        Title="Edit Order" Height="512.612" Width="726.78" BorderThickness="0" Loaded="MetroWindow_Loaded">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="Auto"/>
+        </Grid.ColumnDefinitions>
+        <TextBlock Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" FontSize="16" Foreground="#FF595959" Padding="10"><Run Text="Edit Customer Information:"/></TextBlock>
+
+        <Label Grid.Row="1" Grid.Column="0" x:Name="lblEditCustomer_CustomerID" Content="Customer ID:" Padding="20" />
+        <Label Grid.Row="1" Grid.Column="1" x:Name="lblEditCustomer_CustomerIDField" Width="200" Height="40" />
+
+        <Label Grid.Row="2" Grid.Column="0" x:Name="lblEditCustomer_FirstName" Content="First Name:" Padding="20"/>
+        <TextBox Grid.Row="2" Grid.Column="1" x:Name="txtEditCustomer_FirstName" Width="200" Height="40"/>
+        <Label Grid.Row="2" Grid.Column="2" x:Name="lblEditCustomer_LastName" Content="Last Name:" Padding="20"/>
+        <TextBox Grid.Row="2" Grid.Column="3" x:Name="txtEditCustomer_LastName" Height="40" Width="200"/>
+
+        <Label Grid.Row="3" Grid.Column="0" x:Name="lblEditCustomer_LocalPhone" Content="Local Phone:" Padding="20"/>
+        <TextBox Grid.Row="3" Grid.Column="1" x:Name="txtEditCustomer_LocalPhone" Height="40" Width="200"/>
+
+        <Label Grid.Row="4" Grid.Column="0" x:Name="lblEditCustomer_EmailAddress" Padding="20" Content="Email Address:"/>
+        <TextBox Grid.Row="4" Grid.Column="1" x:Name="txtEditCustomer_EmailAddress" Height="40" Width="200"/>
+
+        <Label Grid.Row="5" Grid.Column="0" x:Name="lblEditCustomer_FreeCompany" Padding="20" Content="Free Company:"/>
+        <TextBox Grid.Row="5" Grid.Column="1" x:Name="txtEditCustomer_FreeCompany" Width="200" Height="40"/>
+
+        <Button Grid.Row="6" Grid.Column="1" x:Name="btnEditCustomer_ConfirmChanges" Height="40" Content="Confirm changes" Margin="0 30 0 0" Click="btnEditCustomer_ConfirmChanges_Click"/>
+        <Button Grid.Row="6" Grid.Column="3" x:Name="btnEditCustomer_CancelChanges" Height="40" Content="Cancel" Margin="0 30 0 0" Click="btnEditCustomer_CancelChanges_Click"/>
+    </Grid>
+</Controls:MetroWindow>

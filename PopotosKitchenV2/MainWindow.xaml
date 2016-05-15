@@ -1,0 +1,684 @@
+﻿<Controls:MetroWindow x:Name="mainwindow" x:Class="PopotosKitchenV2.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:Controls="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:PopotosKitchenV2"
+        WindowStartupLocation="CenterScreen"
+        mc:Ignorable="d"
+        ResizeMode="NoResize"
+        Title="Popoto's Kitchen" Height="850.864" Width="1200.691" Background="WhiteSmoke">
+    <Controls:MetroWindow.Effect>
+        <DropShadowEffect Opacity="0.5"/>
+    </Controls:MetroWindow.Effect>
+    <Grid Background="White">
+        <Image Height="1247" VerticalAlignment="Bottom" HorizontalAlignment="Right" Width="1247" Stretch="None" Source="Resources/popotokitchenprojectsmall.jpg" RenderTransformOrigin="0.5,0.5" Margin="-52,-425,0,0"/>
+        <DockPanel LastChildFill="True">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="Auto" />
+                </Grid.RowDefinitions>
+                <Grid Grid.Row="0">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="Auto" />
+                    </Grid.ColumnDefinitions>
+                    <Menu DockPanel.Dock="Top" Grid.Row="0" Grid.Column="0" Height="Auto" Padding="10px" Background="{x:Null}" FontFamily="Segoe UI Light" FontSize="16" Foreground="#FF4B4B4B">
+                        <MenuItem Header="_FILE" RenderTransformOrigin="0.5,0.5" Background="{x:Null}">
+                            <MenuItem x:Name="mnuExit" Header="E_xit" Click="mnuExit_Click" />
+                        </MenuItem>
+                        <MenuItem Header="_REPORT" Background="{x:Null}">
+                            <MenuItem x:Name="mnuCustomerReport" Header="_Customer Report" Click="mnuCustomerReport_Click" />
+                            <MenuItem x:Name="mnuUncompleteOrdersReport" Header="_Uncompleted Orders" Click="mnuUncompleteOrdersReport_Click"/>
+                        </MenuItem>
+                        <MenuItem Header="_HELP" Background="{x:Null}">
+                            <MenuItem x:Name="mnuAbout" Header="_About" />
+                        </MenuItem>
+                    </Menu>
+                    <Button x:Name="btnLogin" Grid.Column="1" Padding="10 0 10 0" Margin="10" Content="Log In" Background="{x:Null}" BorderThickness="0" FontSize="14" FontWeight="Normal" Foreground="#FF474747" FontFamily="Segoe UI Light" BorderBrush="{x:Null}" Click="btnLogin_Click" />
+                </Grid>
+
+                <TabControl Padding="30" Margin="0,47,0,5" Grid.RowSpan="2" SelectionChanged="TabControl_SelectionChanged">
+                    <TabItem Header="Home" x:Name="tabHome" Padding="30 10 10 10">
+                        <Grid Margin="40,-30,40,0">
+                            <RichTextBox FontFamily="Segoe UI" Margin="10,10,-10,90" Background="{x:Null}" Foreground="#FF919191" BorderThickness="0" IsReadOnly="True">
+                                <FlowDocument>
+                                    <Paragraph x:Name="paragraphHomeMessage">
+                                        <Run x:Name="txtHomeMessage" FontSize="48"  Text="Welcome to Popoto's Kitchen! Please log in to continue."/>
+                                    </Paragraph>
+                                    <Paragraph>
+                                        <Run x:Name="txtHomeDetails" FontSize="24" Text=" "/>
+                                    </Paragraph>
+                                </FlowDocument>
+                            </RichTextBox>
+                        </Grid>
+                    </TabItem>
+                    <TabItem Header="My Kitchen" x:Name="tabMyInfo" Padding="10" Visibility="Collapsed">
+                        <Grid Margin="40,-30,40,0">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto"/>
+                                <ColumnDefinition Width="Auto"/>
+                                <ColumnDefinition Width="Auto"/>
+                                <ColumnDefinition Width="Auto"/>
+                            </Grid.ColumnDefinitions>
+
+                            <Label Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="3" x:Name="lblMessageCount" Padding="20" Content="Hello! You have no new messages." FontSize="24" Foreground="#FF919191"/>
+                            <DataGrid Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="4" x:Name="gridMessageGrid" Width="500" Height="155" BorderThickness="1" IsReadOnly="True" SelectionMode="Single" SelectionUnit="FullRow" Margin="30 0 0 0" SelectionChanged="gridMessageGrid_SelectionChanged"/>
+                            <Button Grid.Row="2" Grid.Column="2" x:Name="btnMessage_Read" Width="141" Height="40" Content="Read Message" Margin="68,32,348,0" Click="btnRead_Click"/>
+                            <Button Grid.Row="2" Grid.Column="2" x:Name="btnMessage_Delete" Width="141" Height="40" Content="Delete Message" Margin="224,32,194,0" Click="btnDelete_Click"/>
+                            <Button Grid.Row="2" Grid.Column="2" x:Name="btnMessage_Refresh" Width="141" Height="40" Content="Refresh Messages" Margin="376,32,41,0" Click="btnMessage_Refresh_Click" />
+
+                            <Label Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="3" x:Name="lblKitchen_UncompletedOrders" Padding="20 40 20 20" Content="Cooking time! Orders to cook:" FontSize="24" Foreground="#FF919191"/>
+                            <DataGrid Grid.Row="4" Grid.Column="1" Grid.ColumnSpan="4" x:Name="gridKitchenOrders" Width="500" Height="175" BorderThickness="1" IsReadOnly="True" SelectionMode="Single" SelectionUnit="FullRow" Margin="30 0 0 0" SelectionChanged="gridKitchenOrders_SelectionChanged"/>
+                            <Button Grid.Row="5" Grid.Column="2" x:Name="btnKitchenOrder_MarkCompleted" Width="141" Height="40" Content="Mark as Cooked" Margin="71,32,351,3" Click="btnKitchenOrder_MarkCompleted_Click"/>
+                            <Button Grid.Row="5" Grid.Column="2" x:Name="btnKitchenOrder_CookItems" Width="141" Height="40" Content="Cook Items" Margin="226,32,196,2" Click="btnKitchenOrder_CookItems_Click"/>
+                            <Button Grid.Row="5" Grid.Column="2" x:Name="btnKitchenOrder_Refresh" Width="141" Height="40" Content="Refresh" Margin="379,32,44,4" Click="btnKitchenOrder_Refresh_Click"/>
+                        </Grid>
+
+                    </TabItem>
+                    <TabItem Header="Orders" x:Name="tabOrders" Padding="10 10 10 10" Visibility="Collapsed">
+                        <Grid Margin="40,-30,40,0">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="*"/>
+                                <RowDefinition Height="Auto"/>
+                            </Grid.RowDefinitions>
+                            <TabControl Grid.Row="0" Padding="10" Margin="0,0,0,-23" Grid.RowSpan="4">
+                                <TabItem Header="Search">
+                                    <Grid x:Name="grid1" Margin="0,2,0,-1">
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="Auto" />
+                                            <RowDefinition Height="Auto" />
+                                            <RowDefinition Height="*" />
+                                            <RowDefinition Height="Auto"/>
+                                        </Grid.RowDefinitions>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="Auto" />
+                                            <ColumnDefinition Width="*" />
+                                            <ColumnDefinition Width="Auto" />
+                                            <ColumnDefinition Width="Auto" />
+                                            <ColumnDefinition Width="Auto" />
+                                        </Grid.ColumnDefinitions>
+                                        <Label Grid.Row="0" Grid.Column="0" x:Name="lblSearchCriteria" Content="Search:" Padding="20" />
+                                        <TextBox Grid.Row="0" Grid.Column="1" x:Name="txtSearchCriteria" Width="Auto" Height="40"/>
+                                        <Label Grid.Row="1" Grid.Column="0" x:Name="lblSearchBy" Content="Search by:" Padding="20" />
+                                        <Grid Grid.Row="1" Grid.Column="1">
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition Width="Auto"/>
+                                                <ColumnDefinition Width="Auto"/>
+                                            </Grid.ColumnDefinitions>
+                                            <ComboBox Name="cmbxSearchBy" Grid.Column="0" Width="125" Margin="0 0 20 0" Height="40" >
+                                                <ComboBoxItem x:Name="cmbxitmAll" Content="All" Selector.IsSelected="True"/>
+                                                <ComboBoxItem x:Name="cmbxitmOrderNumber" Content="Order Number"/>
+                                                <ComboBoxItem x:Name="cmbxitmName" Content="Name" />
+                                                <ComboBoxItem x:Name="cmbxitmCook" Content="Cook ID" />
+                                                <ComboBoxItem x:Name="cmbxitmDateRange" Content="Date Range" Selected="cmbxitmDateRange_Selected" Unselected="cmbxitmDateRange_Unselected" />
+                                            </ComboBox>
+                                            <Grid Grid.Row="1" Grid.Column="1">
+                                                <Grid.ColumnDefinitions>
+                                                    <ColumnDefinition Width="Auto"/>
+                                                    <ColumnDefinition Width="Auto"/>
+                                                    <ColumnDefinition Width="Auto"/>
+                                                </Grid.ColumnDefinitions>
+                                                <CheckBox Grid.Column="0" x:Name="chkSearchPaid" Padding="10" Content="Paid?" />
+                                                <CheckBox Grid.Column="1" x:Name="chkSearchTraded" Padding="10" Content="Traded?" />
+                                                <CheckBox Grid.Column="2" x:Name="chkSearchCompleted" Padding="10" Content="Completed?" />
+                                            </Grid>
+                                        </Grid>
+                                        <Label Grid.Row="0" Grid.Column="2" x:Name="lblSearchStartDate" Content="Start date:" VerticalAlignment="Center" Margin="20 0 10 0"/>
+                                        <DatePicker Grid.Row="0" Grid.Column="3" x:Name="dateOrderSearchStart" Height="40" />
+                                        <Button x:Name="btnSearchOrders" Grid.Row="0" Grid.Column="4" Width="250" Height="40"  Content="Search!" Margin="50 0 0 0" Click="btnSearchOrders_Click"/>
+                                        <Button x:Name="btnSearchOrders_ViewAllOrders" Grid.Row="1" Grid.Column="4" Width="250" Content="View All" Margin="50 0 0 0" Height="40" Click="btnSearchOrders_ViewAllOrders_Click"/>
+
+                                        <Label Grid.Row="1" Grid.Column="2" x:Name="lblSearchEndDate" Content="End date:" VerticalAlignment="Center" Margin="20 0 10 0"/>
+                                        <DatePicker Grid.Row="1" Grid.Column="3" x:Name="dateOrderSearchEnd" Height="40"/>
+
+                                        <TextBlock Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="5" Margin="0,35,0,-35"><Run Text="Please select an order to modify or view:" FontSize="18.667" Foreground="#FF535353"/></TextBlock>
+                                        <DataGrid Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="5" Name="gridOrderSearchResults" IsReadOnly="True" SelectionMode="Single" SelectionUnit="FullRow"  Margin="0,0,0,69" BorderThickness="1" Background="#7FFFFFFF" SelectionChanged="gridOrderSearchResults_SelectionChanged"/>
+
+                                        <Button Grid.Row="3" Grid.Column="0" x:Name="btnEditOrder" Content="Edit Order" HorizontalAlignment="Left" Margin="0,346,0,-1" Width="142" Height="41" Click="btnEditOrder_Click" Grid.ColumnSpan="2"/>
+                                        <Button Grid.Row="3" Grid.Column="1" x:Name="btnEditItems" Content="Edit Items" HorizontalAlignment="Left" Margin="68,346,0,-1" Width="140" Height="41" Click="btnEditItems_Click"/>
+                                        <Button Grid.Row="3" Grid.Column="1" x:Name="btnDeleteOrder" Content="Delete Order" HorizontalAlignment="Left" Margin="229,346,0,-1" Width="142" Click="btnDeleteOrder_Click"/>
+                                        <Button Grid.Row="3" Grid.Column="1" x:Name="btnAssignOrders" Width="141" Height="40" Content="Assign Orders" Margin="389,347,107,-1" Click="btnKitchenOrder_AssignOrders_Click" Grid.ColumnSpan="3"/>
+                                    </Grid>
+                                </TabItem>
+                                <TabItem Header="New">
+                                    <Grid>
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="Auto"/>
+                                            <RowDefinition Height="Auto"/>
+                                            <RowDefinition Height="Auto"/>
+                                            <RowDefinition Height="Auto"/>
+                                            <RowDefinition Height="Auto"/>
+                                            <RowDefinition Height="Auto"/>
+                                            <RowDefinition Height="Auto"/>
+                                            <RowDefinition Height="Auto"/>
+                                        </Grid.RowDefinitions>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="Auto"/>
+                                            <ColumnDefinition Width="Auto"/>
+                                            <ColumnDefinition Width="Auto"/>
+                                            <ColumnDefinition Width="Auto"/>
+                                            <ColumnDefinition Width="Auto"/>
+                                        </Grid.ColumnDefinitions>
+                                        <TextBlock Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" x:Name="txtBlkNewEmp" Margin="20"><Run Text="Please enter the order information:"/></TextBlock>
+                                        <Button Grid.Row="0" Grid.Column="3" x:Name="btnNewOrder_NewCustomer" Content="Choose Customer" Height="40" Margin="10" Width="200" Click="btnNewOrder_NewCustomer_Click"/>
+
+                                        <Label Grid.Row="1" Grid.Column="0" x:Name="lblNewOrder_CustomerID" Content="Customer ID" Padding="20"/>
+                                        <TextBox Grid.Row="1" Grid.Column="1" x:Name="txtNewOrder_CustomerID" Width="200" Height="40"/>
+                                        <Label Grid.Row="1" Grid.Column="2" x:Name="lblNewOrder_CookID"   Content="Cook ID" Padding="20"/>
+                                        <TextBox Grid.Row="1" Grid.Column="3" x:Name="txtNewOrder_CookID" Width="200" Height="40"/>
+
+                                        <Label Grid.Row="2" Grid.Column="0" x:Name="lblNewOrder_DatePicker" Content="Örder Date:" Padding="20"/>
+                                        <DatePicker Grid.Row="2" Grid.Column="1" x:Name="datepckNewOrder_Date" Height="40" Width="200"/>
+                                        <Button Grid.Row="2" Grid.Column="3" x:Name="btnNewOrder_BeginOrder" Content="Begin Order" Height="40" Margin="10" Padding="12" Width="200" Click="btnNewOrder_BeginOrder_Click"/>
+
+                                        <Label Grid.Row="3" Grid.Column="0" Content="Please select a recipe to add to the order (you may add as many as you like):" Grid.ColumnSpan="4" Padding="20"/>
+
+                                        <Label Grid.Row="4" Grid.Column="0" x:Name="lblNewOrder_OrderID" Content="Order ID:" Padding="20"/>
+                                        <TextBlock Grid.Row="4" Grid.Column="1" x:Name="txtblkNewOrder_OrderID" Padding="20"><Run Text="Create an order.."/></TextBlock>
+                                        <Label Grid.Row="4" Grid.Column="2" x:Name="lblNewOrder_SearchRecipe" Content="Search Recipe:" Padding="20"/>
+                                        <ComboBox Grid.Row="4" Grid.Column="3" x:Name="cmbNewOrder_SearchRecipe" Width="200" Height="40" Loaded="cmbNewOrder_SearchRecipe_Loaded"/>
+                                        <Label Grid.Row="5" Grid.Column="2" x:Name="lblNewOrder_RecipeQuantity" Content="Quantity:" Padding="20"/>
+                                        <TextBox Grid.Row="5" Grid.Column="3" x:Name="txtNewOrder_RecipeQuantity" Height="40" Width="200"/>
+
+                                        <Button Grid.Row="6" Grid.Column="3" x:Name="btnNewOrder_CreateOrder" Content="Add to Order" Height="40" Margin="10" Padding="12" Width="200" Click="btnNewOrder_CreateOrder_Click"/>
+                                        <Button Grid.Row="6" Grid.Column="4" x:Name="btnNewOrder_ClearForm" Content="Clear" Padding="12" Height="40" Margin="10,10,0,10" Click="btnNewOrder_ClearForm_Click" HorizontalAlignment="Left" Width="55" />
+
+                                        <Label Grid.Row="5" Grid.Column="0" x:Name="lblNewOrder_Price" Content="Price" Padding="20" />
+                                        <TextBox Grid.Row="5" Grid.Column="1" x:Name="txtNewOrder_Price" Height="40" Width="200"/>
+
+                                        <DataGrid Grid.Row="7" Grid.Column="0" Grid.ColumnSpan="4" IsReadOnly="True" SelectionMode="Single" SelectionUnit="FullRow"  x:Name="gridNewOrder_ViewOrder" Margin="0,10,0,-197" Background="#7FFFFFFF" BorderThickness="1" />
+                                        <Button Grid.Row="2" Grid.Column="4" x:Name="btnNewOrder_ClearOrder" Content="Clear" Padding="12" Height="40" Margin="10,10,0,10" HorizontalAlignment="Left" Width="55" Click="btnNewOrder_ClearOrder_Click" />
+                                    </Grid>
+                                </TabItem>
+                                <TabItem Header="Archive" x:Name="tabOrderArchive" Visibility="Collapsed">
+                                    <Grid Height="617">
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="Auto" />
+                                            <RowDefinition Height="Auto" />
+                                            <RowDefinition Height="*" />
+                                            <RowDefinition Height="Auto"/>
+                                        </Grid.RowDefinitions>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="Auto" />
+                                            <ColumnDefinition Width="*" />
+                                            <ColumnDefinition Width="Auto" />
+                                            <ColumnDefinition Width="Auto" />
+                                            <ColumnDefinition Width="Auto" />
+                                        </Grid.ColumnDefinitions>
+                                        <Label Grid.Row="0" Grid.Column="0" x:Name="lblOrderArchive_SearchCriteria" Content="Search:" Padding="20" />
+                                        <TextBox Grid.Row="0" Grid.Column="1" x:Name="txtOrderArchive_SearchCriteria" Width="Auto" Height="40"/>
+
+                                        <Button x:Name="btnOrderArchive_SearchOrders" Grid.Row="0" Grid.Column="4" Width="250" Content="Search!" Margin="50 0 0 0" Height="40" Click="btnOrderArchive_SearchOrders_Click" />
+
+                                        <Button x:Name="btnOrderArchive_ViewAllOrders" Grid.Row="1" Grid.Column="4" Width="250" Content="View All" Margin="50 0 0 0" Height="40" Click="btnOrderArchive_ViewAllOrders_Click" />
+
+
+                                        <TextBlock Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="5" Margin="0,35,0,-35"><Run Text="Please select an order to re-activate or perma-delete:" FontSize="18.667" Foreground="#FF535353"/></TextBlock>
+                                        <DataGrid Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="5" IsReadOnly="True"  Name="gridOrderArchive_SearchResults" Margin="0,35,0,150" SelectionMode="Single" SelectionUnit="FullRow" BorderThickness="1" Background="#7FFFFFFF" SelectionChanged="gridCustomerArchive_CustomerSearchResults_SelectionChanged" Grid.RowSpan="2" />
+
+                                        <Button Grid.Row="3" Grid.Column="0" x:Name="btnOrderArchive_EditOrder" Content="Edit Order" HorizontalAlignment="Left" Margin="0,466,0,79" Width="140" Click="btnOrderArchive_EditOrder_Click" />
+                                        <Button Grid.Row="3" Grid.Column="1" x:Name="btnOrderArchive_DeleteOrder" Content="Delete Order" HorizontalAlignment="Left" Margin="30,466,0,79" Width="140" Height="41" Click="btnOrderArchive_DeleteOrder_Click" />
+                                        <Button Grid.Row="3" Grid.Column="1" x:Name ="btnOrderArchive_ReactivateOrder" Content="Reactivate Order" Margin="205,466,245,79" Width="141" Click="btnOrderArchive_ReactivateOrder_Click" />
+                                        <CheckBox x:Name="chkSearchPaid_Archive" Padding="10" Content="Paid?" Margin="10,0,515,0" Grid.Column="1" Grid.Row="1" />
+                                        <CheckBox x:Name="chkSearchTraded_Archive" Padding="10" Content="Traded?" Margin="87,0,320,0" Grid.Column="1" Grid.Row="1" />
+                                        <CheckBox Grid.Column="1" x:Name="chkSearchCompleted_Archive" Padding="10" Content="Completed?" Margin="173,0,212,0" Grid.Row="1" />
+                                    </Grid>
+
+                                </TabItem>
+
+                            </TabControl>
+
+                        </Grid>
+                    </TabItem>
+                    <TabItem Header="Customers" x:Name="tabCustomers" Padding="10" Height="55" VerticalAlignment="Top" HorizontalAlignment="Right" Width="145" Visibility="Collapsed">
+                        <Grid Margin="40,-30,40,0">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="*"/>
+                                <RowDefinition Height="Auto"/>
+                            </Grid.RowDefinitions>
+                            <TabControl Grid.Row="0" Padding="10" Margin="0,0,0,-40" Grid.RowSpan="4" Height="687" VerticalAlignment="Top">
+                                <TabItem Header="Search" x:Name="tabCustomerSearch">
+                                    <Grid Height="629">
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="Auto" />
+                                            <RowDefinition Height="Auto" />
+                                            <RowDefinition Height="*" />
+                                            <RowDefinition Height="Auto"/>
+                                        </Grid.RowDefinitions>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="Auto" />
+                                            <ColumnDefinition Width="*" />
+                                            <ColumnDefinition Width="Auto" />
+                                            <ColumnDefinition Width="Auto" />
+                                            <ColumnDefinition Width="Auto" />
+                                        </Grid.ColumnDefinitions>
+                                        <Label Grid.Row="0" Grid.Column="0" x:Name="lblCustomer_SearchCriteria" Content="Search:" Padding="20" />
+                                        <TextBox Grid.Row="0" Grid.Column="1" x:Name="txtCustomer_SearchCriteria" Width="Auto" Height="40"/>
+                                        <Label Grid.Row="1" Grid.Column="0" x:Name="lblCustomer_SearchBy" Content="Search by:" Padding="20" />
+                                        <Grid Grid.Row="1" Grid.Column="1">
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition Width="Auto"/>
+                                                <ColumnDefinition Width="Auto"/>
+                                            </Grid.ColumnDefinitions>
+                                            <ComboBox Name="cmbxCustomer_SearchBy" Grid.Column="0" Width="175" Margin="0 0 20 0" Height="40" >
+                                                <ComboBoxItem x:Name="cmbxitmCustomer_All" Content="All" Selector.IsSelected="True"/>
+                                                <ComboBoxItem x:Name="cmbxitmCustomer_CustomerID" Content="Customer ID"/>
+                                                <ComboBoxItem x:Name="cmbxitmCustomer_Name" Content="Name" />
+                                                <ComboBoxItem x:Name="cmbxitmCustomer_FreeCompany" Content="Free Company" />
+                                            </ComboBox>
+                                        </Grid>
+                                        <Button x:Name="btnCustmer_SearchCustomers" Grid.Row="0" Grid.Column="4" Width="250" Content="Search!" Margin="50 0 0 0" Height="40" Click="btnCustomer_SearchCustomers_Click"/>
+
+                                        <Button x:Name="btnCustomer_ViewAllCustomers" Grid.Row="1" Grid.Column="4" Width="250" Content="View All" Margin="50 0 0 0" Height="40" Click="btnCustomer_ViewAllCustomers_Click"/>
+
+
+                                        <TextBlock Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="3" Grid.RowSpan="2"  Margin="0 25 0 0"><Run Text="Please select a customer to modify or view:" FontSize="18.667" Foreground="#FF535353"/></TextBlock>
+                                        <DataGrid Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="5" IsReadOnly="True"  Name="gridCustomer_CustomerSearchResults" Margin="0,0,0,162" SelectionMode="Single" SelectionUnit="FullRow" BorderThickness="1" Background="#7FFFFFFF" SelectionChanged="gridCustomer_CustomerSearchResults_SelectionChanged" Grid.RowSpan="2" Height="346" VerticalAlignment="Bottom" />
+
+                                        <Button Grid.Row="3" Grid.Column="0" x:Name="btnCustomer_EditCustomer" Content="Edit Customer" HorizontalAlignment="Left" Margin="2,457,0,88" Width="141" Height="41" Click="btnCustomer_EditCustomer_Click" Grid.ColumnSpan="2" />
+                                        <Button Grid.Row="3" Grid.Column="1" x:Name="btnCustomer_DeleteCustomer" Content="Delete Customer" HorizontalAlignment="Left" Margin="70,457,0,88" Width="141" Height="41" Click="btnCustomer_DeleteCustomer_Click"/>
+                                    </Grid>
+                                </TabItem>
+                                <TabItem Header="New">
+                                    <Grid>
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="Auto"/>
+                                            <RowDefinition Height="Auto"/>
+                                            <RowDefinition Height="Auto"/>
+                                            <RowDefinition Height="Auto"/>
+                                            <RowDefinition Height="Auto"/>
+                                            <RowDefinition Height="Auto"/>
+                                            <RowDefinition Height="Auto"/>
+                                            <RowDefinition Height="Auto"/>
+                                        </Grid.RowDefinitions>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="Auto"/>
+                                            <ColumnDefinition Width="Auto"/>
+                                            <ColumnDefinition Width="Auto"/>
+                                            <ColumnDefinition Width="Auto"/>
+                                            <ColumnDefinition Width="Auto"/>
+                                        </Grid.ColumnDefinitions>
+                                        <TextBlock Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" x:Name="txtBlkCustomer_NewCustomer" Margin="20"><Run Text="Please enter the customer's information:"/></TextBlock>
+
+                                        <Label Grid.Row="1" Grid.Column="0" x:Name="lblNewCustomer_FirstName" Content="First Name:" Padding="20"/>
+                                        <TextBox Grid.Row="1" Grid.Column="1" x:Name="txtNewCustomer_FirstName" Width="200" Height="40"/>
+                                        <Label Grid.Row="1" Grid.Column="2" x:Name="lblNewCustomer_LastName"   Content="Last Name:" Padding="20"/>
+                                        <TextBox Grid.Row="1" Grid.Column="3" x:Name="txtNewCustomer_LastName" Width="200" Height="40"/>
+
+                                        <Label Grid.Row="2" Grid.Column="0" x:Name="lblNewCustomer_LocalPhone" Content="Phone (no dashes):" Padding="20"/>
+                                        <TextBox Grid.Row="2" Grid.Column="1" x:Name="txtNewCustomer_LocalPhone" Height="40" Width="200"/>
+
+                                        <Label Grid.Row="3" Grid.Column="0" x:Name="lblNewCustomer_EmailAddress" Content="Email Address:" Padding="20"/>
+                                        <TextBox Grid.Row="3" Grid.Column="1" x:Name="txtNewCustomer_EmailAddress" Height="40" Width="200" />
+
+                                        <Label Grid.Row="4" Grid.Column="0" x:Name="lblNewCustomer_FreeCompany" Content="Free Company:" Padding="20"/>
+                                        <TextBox Grid.Row="4" Grid.Column="1" x:Name="txtNewCustomer_FreeCompany" Height="40" Width="200"/>
+
+                                        <Button Grid.Row="5" Grid.Column="0" Grid.ColumnSpan="2" x:Name="btnNewCustomer_Create" Content="Add Customer" Height="40" Width="150" Margin="0 40 0 0" Click="btnNewCustomer_Create_Click"/>
+                                        <Button Grid.Row="5" Grid.Column="2" Grid.ColumnSpan="2" x:Name="btnNewCustmoer_Clear" Content="Clear Form" Height="40" Width="150" Margin="-180 40 0 0" Click="btnNewCustomer_Clear_Click"/>
+
+                                    </Grid>
+                                </TabItem>
+                                <TabItem Header="Archive" x:Name="tabCustomerArchive" Visibility="Collapsed">
+                                    <Grid>
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="Auto" />
+                                            <RowDefinition Height="Auto" />
+                                            <RowDefinition Height="*" />
+                                            <RowDefinition Height="Auto"/>
+                                        </Grid.RowDefinitions>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="Auto" />
+                                            <ColumnDefinition Width="*" />
+                                            <ColumnDefinition Width="Auto" />
+                                            <ColumnDefinition Width="Auto" />
+                                            <ColumnDefinition Width="Auto" />
+                                        </Grid.ColumnDefinitions>
+                                        <Label Grid.Row="0" Grid.Column="0" x:Name="lblCustomerArchive_SearchCriteria" Content="Search:" Padding="20" />
+                                        <TextBox Grid.Row="0" Grid.Column="1" x:Name="txtCustomerArchive_SearchCriteria" Width="Auto" Height="40"/>
+
+                                        <Button x:Name="btnCustomerArchive_SearchCustomers" Grid.Row="0" Grid.Column="4" Width="250" Content="Search!" Margin="50 0 0 0" Height="40" Click="btnCustomerArchive_SearchCustomers_Click"/>
+
+                                        <Button x:Name="btnCustomerArchive_ViewAllCustomers" Grid.Row="1" Grid.Column="4" Width="250" Content="View All" Margin="50 0 0 0" Height="40" Click="btnCustomerArchive_ViewAllCustomers_Click"/>
+
+
+                                        <TextBlock Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="5" Margin="0,35,0,-35"><Run Text="Please select a customer to re-activate or perma-delete:" FontSize="18.667" Foreground="#FF535353"/></TextBlock>
+                                        <DataGrid Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="5" IsReadOnly="True"  Name="gridCustomerArchive_CustomerSearchResults" Margin="0,78,0,144" SelectionMode="Single" SelectionUnit="FullRow" BorderThickness="1" Background="#7FFFFFFF" SelectionChanged="gridCustomerArchive_CustomerSearchResults_SelectionChanged" Grid.RowSpan="2" />
+
+                                        <Button Grid.Row="3" Grid.Column="0" x:Name="btnCustomerArchive_EditCustomer" Content="Edit Customer" HorizontalAlignment="Left" Margin="0,472,0,73" Width="141" Height="41" Click="btnCustomerArchive_EditCustomer_Click" />
+                                        <Button Grid.Row="3" Grid.Column="1" x:Name="btnCustomerArchive_DeleteCustomer" Content="Delete Customer" HorizontalAlignment="Left" Margin="22,472,0,73" Width="141" Height="41" Click="btnCustomerArchive_DeleteCustomer_Click"/>
+                                        <Button Grid.Row="3" Grid.Column="1" x:Name ="btnCustomerArchive_ReactivateCustomer" Content="Reactivate Customer" Margin="183,472,266,73" Width="141" Height="41" Click="btnCustomerArchive_ReactivateCustomer_Click"/>
+                                    </Grid>
+
+                                </TabItem>
+                            </TabControl>
+
+                        </Grid>
+                    </TabItem>
+                    <TabItem Header="Recipes" x:Name="tabRecipes" Padding="10" Visibility="Collapsed">
+                        <Grid Margin="40,-30,40,-27">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto"/>
+                                <ColumnDefinition Width="Auto"/>
+                                <ColumnDefinition Width="Auto"/>
+                                <ColumnDefinition Width="Auto"/>
+                                <ColumnDefinition Width="Auto"/>
+                            </Grid.ColumnDefinitions>
+
+                            <Label Grid.Row="1" Grid.Column="1" x:Name="lblRecipeDirections" Grid.ColumnSpan="3" Margin="0 10 0 0" Padding="20" Content="Select a recipe to view ingredients and stat modifiers:"/>
+
+                            <ComboBox Grid.Row="1" Grid.Column="3" x:Name="cmbRecipeList" Margin="20,15,6,12" Height="40" Width="335" Loaded="cmbRecipeList_Loaded" SelectionChanged="cmbRecipeList_SelectionChanged"/>
+                            <Grid Grid.Row="3" Grid.Column="1">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="Auto"/>
+                                    <RowDefinition Height="*"/>
+                                </Grid.RowDefinitions>
+
+                                <Label Grid.Row="0"  x:Name="lblRecipeIngredients" Padding="20" Content="Ingredients:" />
+                                <Button Grid.Row="1" x:Name="btnViewIngredientDetails" Height="40" Content="DETAILS" Margin="0 78 0 0" Width="75" Click="btnViewIngredientDetails_Click"/>
+                            </Grid>
+
+                            <DataGrid Grid.Row="3" Grid.Column="2" x:Name="gridRecipeIngredients" Height="175" Width="200" BorderThickness="1" IsReadOnly="True" SelectionMode="Single" SelectionUnit="FullRow" SelectionChanged="gridRecipeIngredients_SelectionChanged"/>
+
+                            <Grid Grid.Row="3" Grid.Column="3" Grid.RowSpan="3" IsEnabled="False">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="Auto"/>
+                                    <RowDefinition Height="Auto"/>
+                                    <RowDefinition Height="Auto"/>
+                                    <RowDefinition Height="Auto"/>
+                                    <RowDefinition Height="Auto"/>
+                                    <RowDefinition Height="Auto"/>
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="Auto"/>
+                                    <ColumnDefinition Width="Auto"/>
+                                    <ColumnDefinition Width="Auto"/>
+                                    <ColumnDefinition Width="Auto"/>
+                                    <ColumnDefinition Width="Auto"/>
+                                    <ColumnDefinition Width="Auto"/>
+                                    <ColumnDefinition Width="Auto"/>
+                                </Grid.ColumnDefinitions>
+                                <Label Grid.Row="0" Grid.Column="0" x:Name="lblStatMind" Content="MND" Padding="15"/>
+                                <TextBox Grid.Row="0" Grid.Column="1" x:Name="txtStatMindPerc" Height="40" Width="50"/>
+                                <TextBox Grid.Row="0" Grid.Column="2" x:Name="txtStatMindStack" Height="40" Width="50"/>
+
+                                <Label Grid.Row="0" Grid.Column="3" x:Name="lblStatPie" Content="PIE" Padding="15"/>
+                                <TextBox Grid.Row="0" Grid.Column="4" x:Name="txtStatPiePerc" Height="40" Width="50"/>
+                                <TextBox Grid.Row="0" Grid.Column="5" x:Name="txtStatPieStack" Height="40" Width="50"/>
+
+                                <Label Grid.Row="1" Grid.Column="0" x:Name="lblStatAcc" Content="ACC" Padding="15"/>
+                                <TextBox Grid.Row="1" Grid.Column="1" x:Name="txtStatAccPerc" Height="40" Width="50"/>
+                                <TextBox Grid.Row="1" Grid.Column="2" x:Name="txtStatAccStack" Height="40" Width="50"/>
+
+                                <Label Grid.Row="1" Grid.Column="3" x:Name="lblStatDex" Content="DEX" Padding="15"/>
+                                <TextBox Grid.Row="1" Grid.Column="4" x:Name="txtStatDexPerc" Height="40" Width="50"/>
+                                <TextBox Grid.Row="1" Grid.Column="5" x:Name="txtStatDexStack" Height="40" Width="50"/>
+
+                                <Label Grid.Row="2" Grid.Column="0" x:Name="lblStatCrit" Content="CRIT" Padding="15"/>
+                                <TextBox Grid.Row="2" Grid.Column="1" x:Name="txtStatCritPerc" Height="40" Width="50"/>
+                                <TextBox Grid.Row="2" Grid.Column="2" x:Name="txtStatCritStack" Height="40" Width="50"/>
+
+                                <Label Grid.Row="2" Grid.Column="3" x:Name="lblStatStr" Content="STR" Padding="15"/>
+                                <TextBox Grid.Row="2" Grid.Column="4" x:Name="txtStatStrPerc" Height="40" Width="50"/>
+                                <TextBox Grid.Row="2" Grid.Column="5" x:Name="txtStatStrStack" Height="40" Width="50"/>
+
+                                <Label Grid.Row="3" Grid.Column="0" x:Name="lblStatDet" Content="DET" Padding="15"/>
+                                <TextBox Grid.Row="3" Grid.Column="1" x:Name="txtStatDetPerc" Height="40" Width="50"/>
+                                <TextBox Grid.Row="3" Grid.Column="2" x:Name="txtStatDetStack" Height="40" Width="50"/>
+
+                                <Label Grid.Row="3" Grid.Column="3" x:Name="lblStatInt" Content="INT" Padding="15"/>
+                                <TextBox Grid.Row="3" Grid.Column="4" x:Name="txtStatIntPerc" Height="40" Width="50"/>
+                                <TextBox Grid.Row="3" Grid.Column="5" x:Name="txtStatIntStack" Height="40" Width="50"/>
+
+                                <Label Grid.Row="4" Grid.Column="0" x:Name="lblStatSpell" Content="SPLSPD" Padding="15"/>
+                                <TextBox Grid.Row="4" Grid.Column="1" x:Name="txtStatSpellPerc" Height="40" Width="50"/>
+                                <TextBox Grid.Row="4" Grid.Column="2" x:Name="txtStatSpellStack" Height="40" Width="50"/>
+
+                                <Label Grid.Row="4" Grid.Column="3" x:Name="lblStatParry" Content="PARRY" Padding="15"/>
+                                <TextBox Grid.Row="4" Grid.Column="4" x:Name="txtStatParryPerc" Height="40" Width="50"/>
+                                <TextBox Grid.Row="4" Grid.Column="5" x:Name="txtStatParryStack" Height="40" Width="50"/>
+
+                                <Label Grid.Row="5" Grid.Column="0" x:Name="lblStatVit" Content="VIT" Padding="15"/>
+                                <TextBox Grid.Row="5" Grid.Column="1" x:Name="txtStatVitPerc" Height="40" Width="50"/>
+                                <TextBox Grid.Row="5" Grid.Column="2" x:Name="txtStatVitStack" Height="40" Width="50"/>
+
+                                <Label Grid.Row="5" Grid.Column="3" x:Name="lblStatSkill" Content="SKLSPD" Padding="15"/>
+                                <TextBox Grid.Row="5" Grid.Column="4" x:Name="txtStatSkillPerc" Height="40" Width="50"/>
+                                <TextBox Grid.Row="5" Grid.Column="5" x:Name="txtStatSkillStack" Height="40" Width="50"/>
+                            </Grid>
+
+                            <Image x:Name="imgRecipes" Source="Resources/Apkallu Omelette.png"  Grid.Row="1" Grid.RowSpan="3"  Grid.Column="4" Height="175" Width="175" Margin="178,21,-59,86" RenderTransformOrigin="0.5,0.5"/>
+
+                            <Label Grid.Row="4" Content=" " Height="10"/>
+
+                            <Grid Grid.Row="6" Grid.Column="3" Grid.RowSpan="2" x:Name="gridStatCalculator" Margin="0 15 0 0">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="Auto"/>
+                                    <RowDefinition Height="Auto"/>
+                                    <RowDefinition Height="Auto"/>
+                                    <RowDefinition Height="Auto"/>
+                                    <RowDefinition Height="Auto"/>
+                                    <RowDefinition Height="Auto"/>
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="Auto"/>
+                                    <ColumnDefinition Width="Auto"/>
+                                    <ColumnDefinition Width="Auto"/>
+                                    <ColumnDefinition Width="Auto"/>
+                                    <ColumnDefinition Width="Auto"/>
+                                    <ColumnDefinition Width="Auto"/>
+                                </Grid.ColumnDefinitions>
+                                <Label Grid.Row="0" Grid.Column="0" x:Name="lblUserMind" Content="MND" Padding="15"/>
+                                <Label Grid.Row="0" Grid.Column="1" Content=" " Height="40" Width="50" />
+                                <TextBox Grid.Row="0" Grid.Column="2" x:Name="txtUserMindStack" Height="40" Width="50"/>
+
+                                <Label Grid.Row="0" Grid.Column="3" x:Name="lblUserPie" Content="PIE" Padding="15"/>
+                                <Label Grid.Row="0" Grid.Column="4" Height="40" Width="50"/>
+                                <TextBox Grid.Row="0" Grid.Column="5" x:Name="txtUserPieStack" Height="40" Width="50"/>
+
+                                <Label Grid.Row="1" Grid.Column="0" x:Name="lblUserAcc" Content="ACC" Padding="15"/>
+                                <TextBox Grid.Row="1" Grid.Column="2" x:Name="txtUserAccStack" Height="40" Width="50"/>
+
+                                <Label Grid.Row="1" Grid.Column="3" x:Name="lblUserDex" Content="DEX" Padding="15"/>
+                                <TextBox Grid.Row="1" Grid.Column="5" x:Name="txtUserDexStack" Height="40" Width="50"/>
+
+                                <Label Grid.Row="2" Grid.Column="0" x:Name="lblUserCrit" Content="CRIT" Padding="15"/>
+                                <TextBox Grid.Row="2" Grid.Column="2" x:Name="txtUserCritStack" Height="40" Width="50"/>
+
+                                <Label Grid.Row="2" Grid.Column="3" x:Name="lblUserStr" Content="STR" Padding="15"/>
+                                <TextBox Grid.Row="2" Grid.Column="5" x:Name="txtUserStrStack" Height="40" Width="50"/>
+
+                                <Label Grid.Row="3" Grid.Column="0" x:Name="lblUserDet" Content="DET" Padding="15"/>
+                                <TextBox Grid.Row="3" Grid.Column="2" x:Name="txtUserDetStack" Height="40" Width="50"/>
+
+                                <Label Grid.Row="3" Grid.Column="3" x:Name="lblUserInt" Content="INT" Padding="15"/>
+                                <TextBox Grid.Row="3" Grid.Column="5" x:Name="txtUserIntStack" Height="40" Width="50"/>
+
+                                <Label Grid.Row="4" Grid.Column="0" x:Name="lblUserSpell" Content="SPLSPD" Padding="15"/>
+                                <TextBox Grid.Row="4" Grid.Column="2" x:Name="txtUserSpellStack" Height="40" Width="50"/>
+
+                                <Label Grid.Row="4" Grid.Column="3" x:Name="lblUserParry" Content="PARRY" Padding="15"/>
+                                <TextBox Grid.Row="4" Grid.Column="5" x:Name="txtUserParryStack" Height="40" Width="50"/>
+
+                                <Label Grid.Row="5" Grid.Column="0" x:Name="lblUserVit" Content="VIT" Padding="15" Grid.ColumnSpan="2" Margin="2,0,48,0"/>
+                                <TextBox Grid.Row="5" Grid.Column="2" x:Name="txtUserVitStack" Height="40" Width="50"/>
+
+                                <Label Grid.Row="5" Grid.Column="3" x:Name="lblUserSkill" Content="SKLSPD" Padding="15"/>
+                                <TextBox Grid.Row="5" Grid.Column="5" x:Name="txtUserSkillStack" Height="40" Width="50"/>
+                            </Grid>
+
+                            <Label Grid.Row="5" Grid.Column="1" x:Name="lblRecipeCatalysts" Padding="20" Content="Crystals:" />
+                            <DataGrid Grid.Row="5" Grid.Column="2"  x:Name="gridRecipeCatalysts" Height="75" Width="200" BorderThickness="1" IsReadOnly="True" SelectionMode="Single" SelectionUnit="FullRow" Margin="1,0,0,4" />
+
+                            <Grid Grid.Row="6" Grid.Column="2" Margin="0,20,0,0">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="Auto"/>
+                                    <RowDefinition Height="Auto"/>
+                                    <RowDefinition Height="Auto"/>
+                                    <RowDefinition Height="Auto"/>
+                                    <RowDefinition Height="Auto"/>
+                                </Grid.RowDefinitions>
+
+
+                                <Button Grid.Row="1" x:Name="btnStats_EditMyStats" Height="40" Content="Edit My Stats" Margin="2" Click="btnStats_EditMyStats_Click"/>
+                                <Button Grid.Row="2" x:Name="btnStats_ResetStats" Height="40" Content="Reset Stats" Margin="2" Click="btnStats_ResetStats_Click"/>
+                                <Button Grid.Row="3" x:Name="btnStats_ClearStats" Height="40" Content="Clear Stats" Margin="2" Click="btnStats_ClearStats_Click"/>
+                                <Button Grid.Row="4" x:Name="btnStats_CalcStats" Height="40" Content="Calculate" Margin="2" Click="btnStats_CalcStats_Click" />
+                                <RichTextBox x:Name="richTextBox" HorizontalAlignment="Left" Height="100" VerticalAlignment="Top" Width="200" BorderThickness="0">
+                                    <FlowDocument>
+                                        <Paragraph>
+                                            <Run Text="Calculate your stat increases! Click 'edit my stats', fill in stats in the grid that appears, and use the recipe selector above to view the resulting stat changes. For client demo only."/>
+                                        </Paragraph>
+                                    </FlowDocument>
+                                </RichTextBox>
+                            </Grid>
+                        </Grid>
+                    </TabItem>
+                    <TabItem Header="Cooks" x:Name="tabCooks" Padding="10" Visibility="Collapsed">
+                        <Grid Margin="40,-30,40,0">
+                            <TabControl Padding="10">
+                                <TabItem Header="Current Cooks" x:Name="tabCookCurrent">
+                                    <Grid>
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="Auto" />
+                                            <RowDefinition Height="Auto" />
+                                            <RowDefinition Height="*" />
+                                            <RowDefinition Height="Auto"/>
+                                        </Grid.RowDefinitions>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="Auto" />
+                                            <ColumnDefinition Width="*" />
+                                            <ColumnDefinition Width="Auto" />
+                                            <ColumnDefinition Width="Auto" />
+                                            <ColumnDefinition Width="Auto" />
+                                        </Grid.ColumnDefinitions>
+                                        <Label Grid.Row="0" Grid.Column="0" x:Name="lblCook_SearchCriteria" Content="Search:" Padding="20" />
+                                        <TextBox Grid.Row="0" Grid.Column="1" x:Name="txtCook_SearchCriteria" Width="Auto" Height="40"/>
+
+                                        <Button x:Name="btnCook_SearchCooks" Grid.Row="0" Grid.Column="4" Width="250" Content="Search!" Margin="50 0 0 0" Height="40" Click="btnCook_SearchCooks_Click" />
+
+                                        <Button x:Name="btnCook_ViewAll" Grid.Row="1" Grid.Column="4" Width="250" Content="View All" Margin="50 0 0 0" Height="40" Click="btnCook_ViewAll_Click" />
+
+
+                                        <TextBlock Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="5" Margin="0,35,0,-35"><Run Text="Please select a cook to edit:" FontSize="18.667" Foreground="#FF535353"/></TextBlock>
+                                        <DataGrid Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="5" IsReadOnly="True"  Name="gridCook_SearchResults" Margin="0,78,0,-322" SelectionMode="Single" SelectionUnit="FullRow" BorderThickness="1" Background="#7FFFFFFF" SelectionChanged="gridCook_SearchResults_SelectionChanged" />
+
+                                        <Button Grid.Row="3" Grid.Column="0" x:Name="btnCook_EditCook" Content="Edit Cook" HorizontalAlignment="Left" Margin="0,345,0,0" Width="141" Height="41" Click="btnCook_EditCook_Click" />
+                                        <Button Grid.Row="3" Grid.Column="1" x:Name="btnCook_DeleteCook" Content="Delete Cook" HorizontalAlignment="Left" Margin="30,345,0,0" Width="141" Height="41" Click="btnCook_DeleteCook_Click" />
+                                        <Button Grid.Row="3" Grid.Column="1" x:Name="btnCook_SendMessage" Content="Send Message" Width="141" Height="40" Margin="-45,345,0,0" Click="btnCook_SendMessage_Click"/>
+
+                                    </Grid>
+
+                                </TabItem>
+                                <TabItem Header="New" x:Name="tabNewCook">
+                                    <Grid>
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="Auto"/>
+                                            <RowDefinition Height="Auto"/>
+                                            <RowDefinition Height="Auto"/>
+                                            <RowDefinition Height="Auto"/>
+                                            <RowDefinition Height="Auto"/>
+                                            <RowDefinition Height="Auto"/>
+                                            <RowDefinition Height="Auto"/>
+                                        </Grid.RowDefinitions>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="Auto"/>
+                                            <ColumnDefinition Width="Auto"/>
+                                            <ColumnDefinition Width="Auto"/>
+                                            <ColumnDefinition Width="Auto"/>
+                                        </Grid.ColumnDefinitions>
+
+                                        <TextBlock Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" FontSize="16" Foreground="#FF595959" Padding="10"><Run Text="Add New Cook:"/></TextBlock>
+
+                                        <Label Grid.Row="1" Grid.Column="0" x:Name="lblNewCook_FirstName" Content="First Name:" Padding="20" />
+                                        <TextBox Grid.Row="1" Grid.Column="1" x:Name="txtNewCook_FirstName" Height="40" Width="200" />
+                                        <Label Grid.Row="1" Grid.Column="2" x:Name="lblNewCook_LastName" Content="Last Name:" Padding="20" />
+                                        <TextBox Grid.Row="1" Grid.Column="3" x:Name="txtNewCook_LastName" Height="40" Width="200" />
+
+                                        <Label Grid.Row="2" Grid.Column="0" x:Name="lblNewCook_LocalPhone" Content="Local Phone:" Padding="20" />
+                                        <TextBox Grid.Row="2" Grid.Column="1" x:Name="txtNewCook_LocalPhone" Height="40" Width="200" />
+                                        <Label Grid.Row="2" Grid.Column="2" x:Name="lblNewCook_EmailAddress" Content="Email Address:" Padding="20" />
+                                        <TextBox Grid.Row="2" Grid.Column="3" x:Name="txtNewCook_EmailAddress" Height="40" Width="200" />
+
+                                        <Button Grid.Row="3" Grid.Column="2" x:Name="btnNewCook_AddCook" Height="40" Width="120" Content="Add Cook" Margin="0 20 0 0" Click="btnNewCook_AddCook_Click"/>
+                                        <Button Grid.Row="3" Grid.Column="3" x:Name="btnNewCook_Clear" Height="40" Width="120" Content="Clear" Margin="0 20 0 0" Click="btnNewCook_Clear_Click"/>
+
+                                    </Grid>
+                                </TabItem>
+                                <TabItem Header="Archive" x:Name="tabCookArchive">
+                                    <Grid>
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="Auto" />
+                                            <RowDefinition Height="Auto" />
+                                            <RowDefinition Height="*" />
+                                            <RowDefinition Height="Auto"/>
+                                        </Grid.RowDefinitions>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="Auto" />
+                                            <ColumnDefinition Width="*" />
+                                            <ColumnDefinition Width="Auto" />
+                                            <ColumnDefinition Width="Auto" />
+                                            <ColumnDefinition Width="Auto" />
+                                        </Grid.ColumnDefinitions>
+                                        <Label Grid.Row="0" Grid.Column="0" x:Name="lblCookArchive_SearchCriteria" Content="Search:" Padding="20" />
+                                        <TextBox Grid.Row="0" Grid.Column="1" x:Name="txtCookArchive_SearchCriteria" Width="Auto" Height="40"/>
+
+                                        <Button x:Name="btnCookArchive_SearchCooks" Grid.Row="0" Grid.Column="4" Width="250" Content="Search!" Margin="50 0 0 0" Height="40" Click="btnCookArchive_SearchCooks_Click" />
+
+                                        <Button x:Name="btnCookArchive_ViewAll" Grid.Row="1" Grid.Column="4" Width="250" Content="View All" Margin="50 0 0 0" Height="40" Click="btnCookArchive_ViewAll_Click" />
+
+
+                                        <TextBlock Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="5" Margin="0,35,0,-35"><Run Text="Please select a cook to edit:" FontSize="18.667" Foreground="#FF535353"/></TextBlock>
+                                        <DataGrid Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="5" IsReadOnly="True"  Name="gridCookArchive_SearchResults" Margin="0,78,0,-322" SelectionMode="Single" SelectionUnit="FullRow" BorderThickness="1" Background="#7FFFFFFF" SelectionChanged="gridCustomerArchive_CustomerSearchResults_SelectionChanged" />
+
+                                        <Button Grid.Row="3" Grid.Column="0" x:Name="btnCookArchive_EditCook" Content="Edit Cook" HorizontalAlignment="Left" Margin="0,345,0,0" Width="141" Height="41" Click="btnCookArchive_EditCook_Click" />
+                                        <Button Grid.Row="3" Grid.Column="1" x:Name="btnCookArchive_DeleteCook" Content="Delete Cook" HorizontalAlignment="Left" Margin="30,345,0,0" Width="141" Height="41" Click="btnCookArchive_DeleteCook_Click" />
+                                        <Button Grid.Row="3" Grid.Column="1" x:Name="btnCookArchive_ReactivateCook" Content="Reactivate" Margin="-45 345 0 0" Width="141" Height="41" Click="btnCookArchive_ReactivateCook_Click" />
+                                    </Grid>
+
+                                </TabItem>
+                            </TabControl>
+                        </Grid>
+                    </TabItem>
+                    <Button x:Name="button_Copy" Content="Button" HorizontalAlignment="Left" VerticalAlignment="Top" Width="141" Height="41"/>
+                </TabControl>
+
+                <Grid Grid.Row="2">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="Auto" />
+                    </Grid.ColumnDefinitions>
+                    <Label x:Name="lblStatusMessage" Grid.Column="0" Content="Not currently logged in." Padding="20 10 10 10"/>
+                    <Label x:Name="lblStatusDate" Grid.Column="1" Content="Please wait..." Padding="10 10 20 10"/>
+                </Grid>
+            </Grid>
+        </DockPanel>
+    </Grid>
+</Controls:MetroWindow>

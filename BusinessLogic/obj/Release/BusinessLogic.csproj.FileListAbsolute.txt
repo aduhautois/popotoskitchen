@@ -1,0 +1,12 @@
+C:\Users\Ashlyn\OneDrive\school\fall 15\.net II\PopotosKitchenV2 - School DB\BusinessLogic\bin\Release\BusinessLogic.dll
+C:\Users\Ashlyn\OneDrive\school\fall 15\.net II\PopotosKitchenV2 - School DB\BusinessLogic\bin\Release\BusinessLogic.pdb
+C:\Users\Ashlyn\OneDrive\school\fall 15\.net II\PopotosKitchenV2 - School DB\BusinessLogic\bin\Release\BusinessObjects.dll
+C:\Users\Ashlyn\OneDrive\school\fall 15\.net II\PopotosKitchenV2 - School DB\BusinessLogic\bin\Release\DataAccess.dll
+C:\Users\Ashlyn\OneDrive\school\fall 15\.net II\PopotosKitchenV2 - School DB\BusinessLogic\bin\Release\MahApps.Metro.dll
+C:\Users\Ashlyn\OneDrive\school\fall 15\.net II\PopotosKitchenV2 - School DB\BusinessLogic\bin\Release\System.Windows.Interactivity.dll
+C:\Users\Ashlyn\OneDrive\school\fall 15\.net II\PopotosKitchenV2 - School DB\BusinessLogic\bin\Release\BusinessObjects.pdb
+C:\Users\Ashlyn\OneDrive\school\fall 15\.net II\PopotosKitchenV2 - School DB\BusinessLogic\bin\Release\DataAccess.pdb
+C:\Users\Ashlyn\OneDrive\school\fall 15\.net II\PopotosKitchenV2 - School DB\BusinessLogic\bin\Release\MahApps.Metro.xml
+C:\Users\Ashlyn\OneDrive\school\fall 15\.net II\PopotosKitchenV2 - School DB\BusinessLogic\obj\Release\BusinessLogic.csprojResolveAssemblyReference.cache
+C:\Users\Ashlyn\OneDrive\school\fall 15\.net II\PopotosKitchenV2 - School DB\BusinessLogic\obj\Release\BusinessLogic.dll
+C:\Users\Ashlyn\OneDrive\school\fall 15\.net II\PopotosKitchenV2 - School DB\BusinessLogic\obj\Release\BusinessLogic.pdb

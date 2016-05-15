@@ -1,0 +1,29 @@
+﻿<Controls:MetroWindow x:Class="PopotosKitchenV2.AssignOrder"
+        xmlns:Controls="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:PopotosKitchenV2"
+        WindowStartupLocation="CenterScreen"
+        ResizeMode="NoResize"
+        mc:Ignorable="d"
+        Title="AssignOrder" Height="261.763" Width="439.169">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="Auto"/>
+        </Grid.ColumnDefinitions>
+
+        <Label Grid.Row="0" Grid.Column="0" x:Name="lblCooks" Content="Select a cook:" Padding="20" Margin="0 20 0 0"/>
+        <ComboBox Grid.Row="0" Grid.Column="1" x:Name="cmbCooks" Height="40" Width="225" Margin="0 20 0 0" Loaded="cmbCooks_Loaded"/>
+
+        <Button Grid.Row="1" Grid.Column="1" x:Name="btnAssign" Height="40" Width="225" Content="Assign Order" Margin="0 20 0 0" Click="btnAssign_Click"/>
+        <Button Grid.Row="2" Grid.Column="1" x:Name="btnCancel" Height="40" Width="225" Content="Done" Margin="0 20 0 0" Click="btnCancel_Click" />
+    </Grid>
+</Controls:MetroWindow>
